@@ -11,7 +11,7 @@ flowchart TD
     G --> H[View cart]
     H --> I[Proceed to checkout]
     I --> J[Enter shipping info]
-    J --> K[Initiate payment<br/>(Stripe or Toss)]
+    J --> K[Initiate payment(Stripe or Toss)]
 
     K --> L{Payment success?}
     L -- No --> M[Show payment error and retry]
