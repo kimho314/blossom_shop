@@ -22,7 +22,7 @@ flowchart TD
 
     %% Admin Flow
     R[Admin login] --> S[Admin dashboard]
-    S --> T[Manage products (CRUD)]
+    S --> T[Manage products CRUD]
     S --> U[Manage categories]
     S --> V[View and update orders]
 
