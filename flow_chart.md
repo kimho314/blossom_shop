@@ -11,12 +11,12 @@ flowchart TD
     G --> H[View cart]
     H --> I[Proceed to checkout]
     I --> J[Enter shipping info]
+    J --> K[Initiate payment<br/>(Stripe or Toss)]
 
-    J --> K[Initiate payment (Stripe/Toss)]
     K --> L{Payment success?}
-    L -- No --> M[Show payment error & retry]
-    L -- Yes --> N[Create order, update status]
-    N --> O[Reduce stock, store transaction]
+    L -- No --> M[Show payment error and retry]
+    L -- Yes --> N[Create order and update status]
+    N --> O[Reduce stock<br/>Store transaction]
     O --> P[Redirect to order confirmation]
     P --> Q[View order history]
 
@@ -24,9 +24,10 @@ flowchart TD
     R[Admin login] --> S[Admin dashboard]
     S --> T[Manage products (CRUD)]
     S --> U[Manage categories]
-    S --> V[View/manage orders]
+    S --> V[View and update orders]
 
     %% Optional Future Enhancements
     Q --> W[Leave product review]
-    Q --> X[Receive email confirmation]
+    Q --> X[Receive confirmation email]
+
 ```
