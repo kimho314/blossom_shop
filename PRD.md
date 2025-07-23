@@ -1,103 +1,157 @@
-# 📄 Product Requirement Document (PRD) - Blossom Shop
+# 📘 Product Requirement Document (PRD)
 
-## 🛍️ 프로젝트명
+## 🛍️ Project Name
 
-**Blossom Shop**
+Blossom Shop - Online Store for Books, Bookmarks, and Tumblers
 
-## 🧩 개요
+---
 
-**Blossom Shop**은 북마크, 책, 화장품을 감성적으로 큐레이션하여 판매하는 이커머스 웹사이트입니다. 간결하고 직관적인 쇼핑 경험을 제공하며, Vue.js를 이용한 프론트엔드와 Spring Boot 기반의 백엔드를 통해 견고하고 확장 가능한 구조로 개발됩니다.
+## 📌 Overview
 
-## 🎯 목적
+Blossom Shop is an e-commerce platform focused on delivering a smooth and intuitive shopping experience for customers looking for books, bookmarks, and tumblers. The website will feature user-friendly navigation, secure user authentication, product browsing, shopping cart functionality, real-time payment integration, and an admin dashboard for managing products and orders.
 
-- 감성적이고 독창적인 라이프스타일 제품(북마크, 책, 화장품)을 온라인 판매
-- 직관적인 UI와 안정적인 백엔드로 사용자 만족도 증대
-- 관리자 전용 기능으로 효율적인 상품 및 주문 관리 제공
+---
 
-## 👥 대상 사용자
+## 🎯 Goals
 
-- 일반 고객 (회원/비회원)
-- 관리자 (운영자)
+- Provide an intuitive shopping platform for physical products.
+- Implement secure user registration and authentication (JWT).
+- Allow customers to browse, search, and filter products.
+- Enable seamless checkout and payment process.
+- Provide order tracking for users and management for admins.
+- Deploy the platform using CI/CD pipelines and cloud infrastructure.
 
-## 🧰 기술 스택
+---
+
+## 🖥️ Tech Stack
 
 | 계층           | 기술 스택                                               |
 | -------------- | ------------------------------------------------------- |
 | **Frontend**   | Vue.js, Vue Router, Pinia, Tailwind CSS, Axios          |
 | **Backend**    | Spring Boot, Spring Security, JPA (Hibernate), JWT 인증 |
 | **Database**   | MySQL                                                   |
+| **Payment**    | Stripe (or Toss Payments) API integration               |
 | **Deployment** | Docker, GitHub Actions, AWS (EC2, S3 등)                |
-| **기타**       | Cloudflare, RESTful API 설계, Postman 테스트            |
 
-## 📦 핵심 기능 목록
+---
 
-### 🔐 사용자 인증
+## 👤 User Types
 
-| 기능                        | 설명                              |
-| --------------------------- | --------------------------------- |
-| 이메일 기반 회원가입/로그인 | 사용자 인증 및 JWT 발급           |
-| 비밀번호 찾기               | 이메일 인증 기반 비밀번호 재설정  |
-| 소셜 로그인                 | ❌ 현재 제외됨 (Google, Kakao 등) |
+### 🧑‍💻 General Users
 
-### 🛒 고객 기능
+- Register / Login
+- Browse products by category
+- Add to cart
+- Checkout and pay
+- View order history
 
-| 기능             | 설명                                          |
-| ---------------- | --------------------------------------------- |
-| 상품 목록 보기   | 필터(카테고리, 가격, 정렬 등) 및 검색 가능    |
-| 상품 상세 페이지 | 이미지, 설명, 가격, 재고, 리뷰, 즐겨찾기 가능 |
-| 장바구니         | 수량 조절, 삭제 기능 포함                     |
-| 주문/결제        | 결제 정보 입력, 배송지 선택                   |
-| 주문 내역        | 주문 상태 확인, 배송 조회                     |
-| 리뷰 작성        | 별점, 텍스트 기반 후기 등록                   |
-| 마이페이지       | 내 정보/비밀번호 변경, 주소 관리              |
+### 🛠️ Admin
 
-### ⚙️ 관리자 기능
+- Secure admin login
+- Add/Edit/Delete products
+- Manage categories
+- View/manage orders
 
-| 기능          | 설명                                             |
-| ------------- | ------------------------------------------------ |
-| 관리자 로그인 | 관리자 전용 인증 시스템                          |
-| 상품 관리     | 상품 등록/수정/삭제, 이미지 업로드 포함          |
-| 재고 관리     | 수량 관리 및 품절 상태 변경                      |
-| 주문 관리     | 주문 목록 확인, 상태 변경 (배송 준비/배송 중 등) |
-| 리뷰 관리     | 신고 리뷰 숨김 처리                              |
-| 회원 관리     | 회원 리스트 확인, 상태 변경                      |
-| 통계 대시보드 | 일/월별 매출, 인기 상품, 주문량 그래프 제공      |
+---
 
-## 🗂️ 상품 카테고리 구조
+## 📦 Features
 
-- 📚 **책**
-  - 자기계발 / 에세이 / 소설 / 예술
-- 💄 **화장품**
-  - 스킨케어 / 립스틱 / 클렌징 / 향수
-- 📎 **북마크**
-  - 금속 북마크 / 종이 북마크 / 일러스트 / DIY 키트
+### 1. User Features
 
-## 🔁 사용자 흐름 (User Flow)
+- [ ] JWT-based signup & login
+- [ ] Browse & filter products by category
+- [ ] Product detail view
+- [ ] Cart: add, update, remove items
+- [ ] Checkout with real-time payment
+- [ ] View order history
 
-### 고객
+### 2. Admin Features
 
-홈페이지 → 상품 탐색 → 상세페이지 → 장바구니 → 결제 → 주문 확인 → 리뷰 작성
+- [ ] Admin login
+- [ ] CRUD for products
+- [ ] Manage product categories
+- [ ] View and update order status
 
-### 관리자
+### 3. Payment System
 
-관리자 로그인 → 상품 등록/수정 → 주문 확인 → 배송 처리 → 통계 확인
+- [ ] Integrate Stripe Payments API
+- [ ] Secure checkout page with order summary
+- [ ] Handle payment success/failure callbacks
+- [ ] Store transaction info in DB
+- [ ] Send order confirmation email (future)
 
-## 📅 개발 일정 예시 (6주 기준)
+### 4. UI/UX
 
-| 주차  | 내용                                    |
-| ----- | --------------------------------------- |
-| 1주차 | 기능 목록 확정, 디자인 시안 제작        |
-| 2주차 | Vue.js 환경 세팅, Spring Boot 초기 설정 |
-| 3주차 | 사용자 인증 + 상품 목록 API 개발        |
-| 4주차 | 장바구니, 주문 처리, 마이페이지 구현    |
-| 5주차 | 관리자 기능 구현, 리뷰/통계 기능 개발   |
-| 6주차 | 통합 테스트, 배포 및 오픈 준비          |
+- [ ] Responsive and mobile-first design
+- [ ] Clean product browsing experience
+- [ ] Clear checkout and payment flow
+- [ ] Error handling and loading states
 
-## 🔮 향후 확장 기능
+---
 
-- 소셜 로그인 (Google, Kakao)
-- 포인트/쿠폰 시스템
-- 상품 추천 알고리즘
-- 사용자 간 Q&A
-- 이미지 첨부 리뷰
-- 다국어 지원
+## 🔐 Authentication & Security
+
+- JWT-based stateless authentication
+- Role-based access (USER, ADMIN)
+- Secure payment tokenization via payment API
+- Backend validation for all transactions
+
+---
+
+## 📡 API Design (RESTful)
+
+Example endpoints:
+
+- `POST /api/auth/signup`
+- `POST /api/auth/login`
+- `GET /api/products`
+- `GET /api/products/{id}`
+- `POST /api/cart`
+- `POST /api/orders`
+- `POST /api/payments/checkout`
+- `POST /api/payments/webhook`
+- Admin:
+  - `POST /api/admin/products`
+  - `PUT /api/admin/products/{id}`
+  - `DELETE /api/admin/products/{id}`
+  - `GET /api/admin/orders`
+
+---
+
+## 🧪 Testing & QA
+
+- Backend: JUnit + MockMVC for controllers/services
+- Frontend: Unit tests for components (Vitest/Pinia Testing)
+- Integration: Postman + Stripe Test API keys
+- Manual testing of full purchase flow
+
+---
+
+## 🚀 Deployment Plan
+
+- Dockerize frontend & backend separately
+- Use GitHub Actions to automate builds
+- AWS EC2 for app hosting
+- AWS S3 for product image storage
+- Stripe Dashboard or Toss Admin for payments
+- HTTPS with SSL (e.g., Let's Encrypt)
+
+---
+
+## ✅ MVP Scope
+
+✅ User auth + role  
+✅ Product catalog + cart  
+✅ Admin product & category CRUD  
+✅ Checkout and payment  
+✅ Basic order tracking
+
+---
+
+## 🧭 Future Enhancements
+
+- Email notifications for orders
+- Product reviews and ratings
+- Wishlist/favorite feature
+- Internationalization (i18n)
+- Inventory management alerts
